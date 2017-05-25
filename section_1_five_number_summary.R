@@ -46,3 +46,23 @@ network.vertex.names(net2) <- c("A","B","C","D","E")
 summary(net2)
 
 as.sociomatrix(net1)
+
+set.vertex.attribute(net1, "gender", c("F", "F", "M","F", "M"))
+
+net1 %v% "adddeg" <- degree(net1)
+
+net1 %v% "gender"
+
+library(igraph)
+
+inet1 <- graph.adjacency(netmat1)
+class(inet1)
+str(inet1)
+
+
+inet2 <- graph.edgelist(netmat2)
+summary(inet2)
+
+V(inet2)$name <- LETTERS[1:5]
+
+
